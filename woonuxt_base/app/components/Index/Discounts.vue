@@ -8,7 +8,7 @@ const {
   'sale-products',
   () =>
     useAsyncGql('getProducts', {
-      first: 5,
+      first: 3,
       orderby: 'POPULARITY',
       where: {
         onSale: true,
@@ -33,9 +33,8 @@ const onSaleProducts = computed(() => saleProductsData.value);
 <template>
   <section class="w-full py-[50px]">
     <div class="container">
-      <h2 class="pb-10">AKTUÁLIS AKCIÓINK</h2>
-
-      <TransitionGroup v-if="pending" name="fade" tag="div" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[24px] pb-[35px]">
+      <TransitionGroup v-if="pending" name="fade" tag="div"
+        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[24px] pb-[35px]">
         <div v-for="i in 3" :key="i" class="animate-pulse">
           <div class="bg-stone-200 h-48 rounded-lg mb-4" />
           <div class="space-y-3">
@@ -47,12 +46,13 @@ const onSaleProducts = computed(() => saleProductsData.value);
       </TransitionGroup>
 
       <template v-else>
-        <div v-if="error" class="text-center text-red-600 pb-[35px]">Failed to load products. Please try again later.</div>
+        <div v-if="error" class="text-center text-red-600 pb-[35px]">Failed to load products. Please try again later.
+        </div>
         <ProductRow v-else :products="onSaleProducts" class="pb-[35px]" />
       </template>
 
       <div class="flex gap-[10px] items-center justify-center">
-        <NuxtLink to="/products" class=""> Tovább az teljes étlapra </NuxtLink>
+        <NuxtLink to="/products" class=""> Tovább az összes képre </NuxtLink>
         <PhosphorIconArrowRight />
       </div>
     </div>

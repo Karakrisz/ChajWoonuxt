@@ -1,6 +1,8 @@
 <template>
   <main>
     <Hero />
+    <CategorySec />
+    <AboutSec />
     <Discounts />
   </main>
 </template>
