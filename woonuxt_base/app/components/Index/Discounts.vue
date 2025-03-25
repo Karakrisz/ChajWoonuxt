@@ -35,7 +35,7 @@ const onSaleProducts = computed(() => saleProductsData.value);
     <div class="container">
       <h2 class="events__h1 shop__h2 text-center">Képek</h2>
       <TransitionGroup v-if="pending" name="fade" tag="div"
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] pb-[35px]">
+        class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] pb-[35px]">
         <div v-for="i in 4" :key="i" class="animate-pulse">
           <div class="bg-stone-200 h-48 rounded-lg mb-4" />
           <div class="space-y-3">

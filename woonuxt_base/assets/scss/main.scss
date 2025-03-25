@@ -166,7 +166,7 @@ header,
 }
 
 .logo {
-  width: 80%;
+  width: 9em;
 }
 
 .navbar {
@@ -272,6 +272,37 @@ header,
   height: 3px;
   margin: 3px 0;
 }
+
+.menu {
+  display: flex;
+  width: 67%;
+}
+
+.cart-user-box {
+  margin-left: 5em;
+}
+
+.menu-link {
+  color: #452540;
+}
+
+.menu-content--format {
+  max-width: 100%;
+  padding: 1em 0 1em 10%;
+}
+
+.bg-white.flex.flex-col.max-w-lg.shadow-lg.top-0.bottom-0.left-0.w-11\/12.z-50.fixed.overflow-x-hidden.p-20 {
+  background-color: #e2d8a8;
+}
+
+.mobil-menu a {
+  color: #000 !important;
+}
+
+.mobil-menu .hover\:text-primary {
+  color: #4d2a49 !important;
+}
+
 
 /********************  Header formating end **********************/
 
@@ -652,7 +683,7 @@ input#price-to {
     font-size: 1.4rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 2rem;
   }
   .menu {
@@ -701,7 +732,7 @@ input#price-to {
     font-size: 1.3rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1.5rem;
   }
   .menu {
@@ -750,7 +781,7 @@ input#price-to {
     font-size: 1.3rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1.5rem;
   }
   .menu {
@@ -799,7 +830,7 @@ input#price-to {
     font-size: 1.1rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1.2rem;
   }
   .menu {
@@ -848,7 +879,7 @@ input#price-to {
     font-size: 1.1rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1.2rem;
   }
   .menu {
@@ -897,7 +928,7 @@ input#price-to {
     font-size: 1rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1rem;
   }
   .menu {
@@ -946,7 +977,7 @@ input#price-to {
     font-size: 0.9rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1rem;
   }
   .menu {
@@ -1008,7 +1039,7 @@ input#price-to {
     font-size: 0.9rem;
   }
   .header__right-box__div__link,
-  .menu li a {
+  .menu-link {
     font-size: 1rem;
   }
   .menu {
@@ -1280,7 +1311,8 @@ input#price-to {
     margin-bottom: 1.7em;
   }
   .footer-content {
-    padding: 0 0 0 2em;
+    padding: 0 2em 0 2em;
+    text-align: center;
   }
   .footer-content__text-box__h3 {
     font-size: 1.5rem;
@@ -1291,7 +1323,7 @@ input#price-to {
   }
   .footer-content__logo-box {
     width: 100%;
-    margin: 4em 0;
+    margin: 1em 0 2em 0;
   }
   .footer-content__text-box {
     text-align: unset;
@@ -1306,7 +1338,7 @@ input#price-to {
     font-size: 1.2rem;
   }
   .footer-content__logo-box__img {
-    width: 80%;
+    width: 33%;
     margin: 0;
     display: unset;
   }
