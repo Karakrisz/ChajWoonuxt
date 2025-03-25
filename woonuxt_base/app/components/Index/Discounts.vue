@@ -8,7 +8,7 @@ const {
   'sale-products',
   () =>
     useAsyncGql('getProducts', {
-      first: 3,
+      first: 4,
       orderby: 'POPULARITY',
       where: {
         onSale: true,
@@ -31,11 +31,12 @@ const onSaleProducts = computed(() => saleProductsData.value);
 </script>
 
 <template>
-  <section class="w-full py-[50px]">
+  <section class="w-full shop-content">
     <div class="container">
+      <h2 class="events__h1 shop__h2 text-center">Képek</h2>
       <TransitionGroup v-if="pending" name="fade" tag="div"
-        class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-[24px] pb-[35px]">
-        <div v-for="i in 3" :key="i" class="animate-pulse">
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[24px] pb-[35px]">
+        <div v-for="i in 4" :key="i" class="animate-pulse">
           <div class="bg-stone-200 h-48 rounded-lg mb-4" />
           <div class="space-y-3">
             <div class="h-4 bg-stone-200 rounded w-3/4" />
@@ -51,7 +52,7 @@ const onSaleProducts = computed(() => saleProductsData.value);
         <ProductRow v-else :products="onSaleProducts" class="pb-[35px]" />
       </template>
 
-      <div class="flex gap-[10px] items-center justify-center">
+      <div class="flex gap-[10px] items-center justify-center shop-link-content">
         <NuxtLink to="/products" class=""> Tovább az összes képre </NuxtLink>
         <PhosphorIconArrowRight />
       </div>

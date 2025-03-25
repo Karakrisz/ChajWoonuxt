@@ -8,12 +8,12 @@ const links = [
 </script>
 
 <template>
-  <header class="z-50 sticky top-0 bg-white">
+  <header class="z-50 top-0 bg-white">
     <div class="container flex justify-between items-center py-4 gap-10">
       <MenuTrigger class="lg:hidden" />
 
       <NuxtLink to="/" class="shrink-0">
-        <NuxtImg src="/img/header/logo.png" class="" />
+        <NuxtImg src="/img/header/logo.png" class="logo" />
       </NuxtLink>
       <div class="space-x-16 lg:flex items-center hidden">
         <NuxtLink v-for="link in links" :key="link.name" :to="link.link" class="">{{ link.name }}</NuxtLink>

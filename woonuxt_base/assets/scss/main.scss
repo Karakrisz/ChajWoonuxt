@@ -94,18 +94,79 @@ h2,
 h3,
 h4,
 h5,
-p,
+p, 
+a,
 .page-link {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
+.text-stone-800 {
+  color: #000;
+  background: #E2D7A8;
+  padding: .5em 1em;
+  border-radius: .5em;
+  margin-left: .5em;
+  font-style: italic;
+}
+
+.product-category-title {
+  color: #E2D7A8;
+}
+
+.product-category-content,
+.product-slug-content {
+  color: #E2D7A8;
+}
+
+.hover\:text-primary {
+  color: #E2D7A8 !important;
+}
+
+input.bg-white.border.rounded-lg.flex.text-left.p-2\.5.w-20.gap-4.items-center.justify-center.focus\:outline-none {
+  color: #000;
+}
+
+h4.flex.flex-wrap.items-center.gap-2.mb-2.text-2xl.font-sesmibold {
+  font-style: italic;
+}
+
+.tabs button.active[data-v-701284b1] {
+  --tw-border-opacity: 1;
+  border-color: rgb(250 204 21 / var(--tw-bg-opacity, 1)) !important;
+  --tw-text-opacity: 1;
+  color:rgb(250 204 21 / var(--tw-bg-opacity, 1)) !important;
+}
+
+.text-stone-900 {
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-bg-opacity, 1));
+  margin-top: 1em;
+}
+
+.text-gray-700 {
+  color: #E2D7A8;
+}
+
+.text-stone-400 {
+  color: silver;
+}
+
+
+.text-center.text-sm.block.relative.m-auto,
+.text-sm.mb-0\.5 {
+  color: silver !important;
+}
 /********************  Header formating start **********************/
 
 header,
 .splide {
   background-image: url(/img/header/header-bg.webp);
   background-size: cover;
+}
+
+.logo {
+  width: 80%;
 }
 
 .navbar {
@@ -220,13 +281,15 @@ header,
 
 /********************  Events formating start **********************/
 
-body,
+body, 
+header,
 .events,
 .about,
 .welcome-shop,
-.blog-custom-content {
+.blog-custom-content,
+.shop-content {
   background-image: url(/img/page-bg.webp);
-  background-size: cover;
+  background-size: 100%;
 }
 
 .events,
@@ -244,7 +307,7 @@ a,
 }
 
 .events__h1 {
-  padding: 2em 0;
+  padding: 0 0 1em 0;
 }
 
 .events__h1,
@@ -328,10 +391,6 @@ a,
 /********************  Events formating end **********************/
 
 /********************  About formating start **********************/
-
-.about {
-  padding-bottom: 3em;
-}
 
 .about__content,
 .footer-content {
@@ -454,6 +513,44 @@ a,
 }
 
 /********************  Welcome shop formating end **********************/
+
+/********************  Shop formating start **********************/
+
+.shop-content {
+  padding: 0 0 10% 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.shop-content a,
+.product-slug-content a, 
+.product-category-content a {
+  color: #000;
+}
+
+input#price-from, 
+input#price-to {
+  color: #000;
+}
+
+.shop__h2 {
+  margin: 1em 0 2em 0;
+}
+
+.shop-link-content {
+  border-radius: 105px;
+  border: 2px solid var(--Gold, #E2D7A8);
+  width: max-content;
+  margin: auto;
+  color: #E2D7A8;
+  padding: .5em 2em;
+  margin-top: 3em;
+}
+
+.shop-link-content a {
+  color: #E2D7A8;
+}
+
+/********************  Shop formating end **********************/
 
 /********************  Footer formating start **********************/
 

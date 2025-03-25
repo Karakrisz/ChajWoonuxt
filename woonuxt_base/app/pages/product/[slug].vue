@@ -82,29 +82,27 @@ const disabledAddToCart = computed(() => {
 </script>
 
 <template>
-  <main class="container relative py-6">
+  <main class="container relative py-6 product-slug-content">
     <div v-if="product">
       <SEOHead :info="product" />
       <Breadcrumb v-if="storeSettings.showBreadcrumbOnSingleProduct" :product class="mb-6" />
 
       <div class="flex flex-col gap-10 md:flex-row md:justify-between lg:gap-24">
-        <ProductImageGallery
-          v-if="product.image"
-          class="relative flex-1"
-          :main-image="product.image"
-          :gallery="product.galleryImages!"
-          :node="type"
-          :active-variation="activeVariation || {}" />
-        <NuxtImg v-else class="relative flex-1 skeleton" src="/images/placeholder.jpg" :alt="product?.name || 'Product'" />
+        <ProductImageGallery v-if="product.image" class="relative flex-1" :main-image="product.image"
+          :gallery="product.galleryImages!" :node="type" :active-variation="activeVariation || {}" />
+        <NuxtImg v-else class="relative flex-1 skeleton" src="/images/placeholder.jpg"
+          :alt="product?.name || 'Product'" />
 
         <div class="lg:max-w-md xl:max-w-lg md:py-2 w-full">
           <div class="flex justify-between mb-4">
             <div class="flex-1">
-              <h1 class="flex flex-wrap items-center gap-2 mb-2 text-2xl font-sesmibold">
+              <h4 class="flex flex-wrap items-center gap-2 mb-2 text-2xl font-sesmibold ">
                 {{ type.name }}
-                <LazyWPAdminLink :link="`/wp-admin/post.php?post=${product.databaseId}&action=edit`">Edit</LazyWPAdminLink>
-              </h1>
-              <StarRating v-if="storeSettings.showReviews" :rating="product.averageRating || 0" :count="product.reviewCount || 0" />
+                <LazyWPAdminLink :link="`/wp-admin/post.php?post=${product.databaseId}&action=edit`">Edit
+                </LazyWPAdminLink>
+              </h4>
+              <StarRating v-if="storeSettings.showReviews" :rating="product.averageRating || 0"
+                :count="product.reviewCount || 0" />
             </div>
           </div>
 
@@ -121,56 +119,41 @@ const disabledAddToCart = computed(() => {
 
           <div class="mb-8 font-light prose" v-html="product.shortDescription || product.description" />
 
-          <hr >
+          <hr>
 
           <form @submit.prevent="addToCart(selectProductInput)">
-            <AttributeSelections
-              v-if="isVariableProduct && product.attributes && product.variations"
-              class="mt-4 mb-8"
-              :attributes="product.attributes.nodes"
-              :default-attributes="product.defaultAttributes"
-              :variations="product.variations.nodes"
-              @attrs-changed="updateSelectedVariations" />
-              <ProductPrice class="text-xl" :sale-price="type.salePrice" :regular-price="type.regularPrice" />
+            <AttributeSelections v-if="isVariableProduct && product.attributes && product.variations" class="mt-4 mb-8"
+              :attributes="product.attributes.nodes" :default-attributes="product.defaultAttributes"
+              :variations="product.variations.nodes" @attrs-changed="updateSelectedVariations" />
+            <ProductPrice class="text-xl" :sale-price="type.salePrice" :regular-price="type.regularPrice" />
 
-            <div
-              v-if="isVariableProduct || isSimpleProduct"
+            <div v-if="isVariableProduct || isSimpleProduct"
               class="fixed bottom-0 left-0 z-10 flex items-center w-full gap-4 p-4 mt-12 bg-white md:static md:bg-transparent bg-opacity-90 md:p-0">
-              <input
-                v-model="quantity"
-                type="number"
-                min="1"
-                aria-label="Quantity"
-                class="bg-white border rounded-lg flex text-left p-2.5 w-20 gap-4 items-center justify-center focus:outline-none" >
-              <AddToCartButton class="flex-1 w-full md:max-w-xs" :disabled="disabledAddToCart" :class="{ loading: isUpdatingCart }" />
+              <input v-model="quantity" type="number" min="1" aria-label="Quantity"
+                class="bg-white border rounded-lg flex text-left p-2.5 w-20 gap-4 items-center justify-center focus:outline-none">
+              <AddToCartButton class="flex-1 w-full md:max-w-xs" :disabled="disabledAddToCart"
+                :class="{ loading: isUpdatingCart }" />
             </div>
-            <a
-              v-if="isExternalProduct && product.externalUrl"
-              :href="product.externalUrl"
-              target="_blank"
+            <a v-if="isExternalProduct && product.externalUrl" :href="product.externalUrl" target="_blank"
               class="rounded-lg flex font-bold bg-stone-800 text-white text-center min-w-[150px] p-2.5 gap-4 items-center justify-center focus:outline-none">
               {{ product?.buttonText || 'View product' }}
             </a>
           </form>
-          
+
 
           <div v-if="storeSettings.showProductCategoriesOnSingleProduct && product.productCategories">
             <div class="grid gap-2 my-8 text-sm">
               <div class="flex items-center gap-2">
                 <span class="text-stone-400">{{ $t('messages.shop.category', 2) }}:</span>
                 <div class="product-categories">
-                  <NuxtLink
-                    v-for="category in product.productCategories.nodes"
-                    :key="category.slug"
-                    :to="`/product-category/${decodeURIComponent(category.slug)}`"
-                    class="hover:text-primary"
-                    :title="category.name"
-                    >{{ category.name }}<span class="comma">, </span>
+                  <NuxtLink v-for="category in product.productCategories.nodes" :key="category.slug"
+                    :to="`/product-category/${decodeURIComponent(category.slug)}`" class="hover:text-primary"
+                    :title="category.name">{{ category.name }}<span class="comma">, </span>
                   </NuxtLink>
                 </div>
               </div>
             </div>
-            <hr >
+            <hr>
           </div>
 
           <div class="flex flex-wrap gap-4">
@@ -191,7 +174,7 @@ const disabledAddToCart = computed(() => {
 </template>
 
 <style scoped>
-.product-categories > a:last-child .comma {
+.product-categories>a:last-child .comma {
   display: none;
 }
 

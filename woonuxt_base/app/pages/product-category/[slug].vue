@@ -34,10 +34,10 @@ useHead({
 
 <template>
   <div class="container capitalize mt-10">
-    <h1>{{slug}}</h1>
+    <h3 class="product-category-title text-xl font-bold uppercase">{{ slug }}</h3>
   </div>
 
-  <div class="container flex items-start gap-16">
+  <div class="container flex items-start gap-16 product-category-content">
     <Filters v-if="storeSettings.showFilters" :hide-categories="true" />
 
     <div class="w-full">
@@ -72,7 +72,7 @@ useHead({
           </div>
         </div>
       </div>
-      
+
 
     </div>
   </div>
